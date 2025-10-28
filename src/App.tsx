@@ -26,7 +26,7 @@ const App: React.FC = () => {
         <div className="min-h-screen bg-gray-900 text-gray-200 font-mono p-4 sm:p-6 lg:p-8">
             <div className="max-w-7xl mx-auto">
                 <header className="mb-8 text-center">
-                    <h1 className="text-4xl sm:text-5xl font-bold text-green-400">sacman-spec</h1>
+                    <h1 className="text-4xl sm:text-5xl font-bold text-green-400">sacman online</h1>
                     <p className="mt-2 text-lg text-gray-400">Interactive `systemctl` command generator & implementation</p>
                 </header>
 
