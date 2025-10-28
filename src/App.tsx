@@ -9,7 +9,7 @@ import { sacmanPythonScript } from './sacmanScript';
 import type { ParseResult } from './types';
 
 const App: React.FC = () => {
-    const [inputValue, setInputValue] = useState('sacman -Qy --type=service');
+    const [inputValue, setInputValue] = useState('sacman -Styuq mpris-proxy');
     const [parseResult, setParseResult] = useState<ParseResult | null>(null);
 
     useEffect(() => {
