@@ -1,0 +1,91 @@
+import type { ReferenceTableData } from './types';
+
+export const SPEC_DATA: ReferenceTableData[] = [
+    {
+        title: 'Main Operations',
+        headers: ['Operation', 'Description'],
+        rows: [
+            { 'Operation': '<code>-S</code>', 'Description': 'Sync/Start operations (enable, start, restart, etc.).' },
+            { 'Operation': '<code>-R</code>', 'Description': 'Remove/Stop operations (disable, stop, mask, etc.).' },
+            { 'Operation': '<code>-Q</code>', 'Description': 'Query operations (list units, status, dependencies, etc.).' },
+            { 'Operation': '<code>-F</code>', 'Description': 'File operations (edit unit files).' },
+            { 'Operation': '<code>-T</code>', 'Description': 'Test/check operations (is-enabled, is-failed, etc.).' },
+            { 'Operation': '<code>-J</code>', 'Description': 'Job operations (list or cancel jobs).' },
+            { 'Operation': '<code>-N</code>', 'Description': 'Environment block operations.' },
+        ],
+    },
+    {
+        title: 'Query Operations (-Q)',
+        headers: ['Flag', '<code>systemctl</code> command', 'Description'],
+        rows: [
+            { 'Flag': '<code>-Ql</code>', '<code>systemctl</code> command': '<code>list-unit-files</code>', 'Description': 'List all installed unit files.' },
+            { 'Flag': '<code>-Qy</code>', '<code>systemctl</code> command': '<code>list-units</code>', 'Description': 'List active units.' },
+            { 'Flag': '<code>-Qi &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>status &lt;unit&gt;</code>', 'Description': 'Show the status of a unit.' },
+            { 'Flag': '<code>-Qd &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>list-dependencies &lt;unit&gt;</code>', 'Description': 'List dependencies of a unit.' },
+            { 'Flag': '<code>-Qj</code>', '<code>systemctl</code> command': '<code>list-jobs</code>', 'Description': 'List active jobs.' },
+            { 'Flag': '<code>-Qo</code>', '<code>systemctl</code> command': '<code>list-automounts</code>', 'Description': 'List automounts.' },
+            { 'Flag': '<code>-Qm</code>', '<code>systemctl</code> command': '<code>list-machines</code>', 'Description': 'List machines.' },
+            { 'Flag': '<code>-Qt</code>', '<code>systemctl</code> command': '<code>list-timers</code>', 'Description': 'List timers.' },
+            { 'Flag': '<code>-Qp</code>', '<code>systemctl</code> command': '<code>list-paths</code>', 'Description': 'List paths.' },
+            { 'Flag': '<code>-Qk</code>', '<code>systemctl</code> command': '<code>list-sockets</code>', 'Description': 'List sockets.' },
+        ]
+    },
+    {
+        title: 'Sync/Start Operations (-S)',
+        headers: ['Flag', '<code>systemctl</code> command', 'Description'],
+        rows: [
+            { 'Flag': '<code>-S &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>enable &lt;unit&gt;</code>', 'Description': 'Enable a unit to start on boot.' },
+            { 'Flag': '<code>-St &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>start &lt;unit&gt;</code>', 'Description': 'Start a unit immediately.' },
+            { 'Flag': '<code>-Sty &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>restart &lt;unit&gt;</code>', 'Description': 'Restart a unit.' },
+            { 'Flag': '<code>-Styq &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>try-restart &lt;unit&gt;</code>', 'Description': 'Restart a unit only if it is already running.' },
+            { 'Flag': '<code>-Styc &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>condrestart &lt;unit&gt;</code>', 'Description': 'Conditionally restart a unit.' },
+            { 'Flag': '<code>-Sd &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>reload &lt;unit&gt;</code>', 'Description': 'Reload a unit\'s configuration.' },
+            { 'Flag': '<code>-Styd &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>reload-or-restart &lt;unit&gt;</code>', 'Description': 'Reload if possible, otherwise restart.' },
+            { 'Flag': '<code>-Sy &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>reenable &lt;unit&gt;</code>', 'Description': 'Re-enable a unit.' },
+            { 'Flag': '<code>-Sm &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>unmask &lt;unit&gt;</code>', 'Description': 'Unmask a unit.' },
+            { 'Flag': '<code>-Se &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>thaw &lt;unit&gt;</code>', 'Description': 'Thaw (un-freeze) a unit.' },
+        ],
+    },
+    {
+        title: 'Remove/Stop Operations (-R)',
+        headers: ['Flag', '<code>systemctl</code> command', 'Description'],
+        rows: [
+            { 'Flag': '<code>-R &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>disable &lt;unit&gt;</code>', 'Description': 'Disable a unit from starting on boot.' },
+            { 'Flag': '<code>-Rt &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>stop &lt;unit&gt;</code>', 'Description': 'Stop a unit immediately.' },
+            { 'Flag': '<code>-Rm &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>mask &lt;unit&gt;</code>', 'Description': 'Mask a unit (prevent it from being started).' },
+            { 'Flag': '<code>-Rk &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>kill &lt;unit&gt;</code>', 'Description': 'Send a signal to processes of a unit.' },
+            { 'Flag': '<code>-Rc &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>clean &lt;unit&gt;</code>', 'Description': 'Clean runtime data of a unit.' },
+            { 'Flag': '<code>-Rv &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>revert &lt;unit&gt;</code>', 'Description': 'Revert unit configuration.' },
+            { 'Flag': '<code>-Re &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>freeze &lt;unit&gt;</code>', 'Description': 'Freeze a unit (pause with cgroup freezer).' },
+        ],
+    },
+    {
+        title: 'Other Operations',
+        headers: ['Flag', '<code>systemctl</code> command', 'Description'],
+        rows: [
+            { 'Flag': '<code>-Fe &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>edit &lt;unit&gt;</code>', 'Description': 'Edit a unit file.' },
+            { 'Flag': '<code>-Ts &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>is-enabled &lt;unit&gt;</code>', 'Description': 'Check if a unit is enabled.' },
+            { 'Flag': '<code>-Tc</code>', '<code>systemctl</code> command': '<code>is-system-running</code>', 'Description': 'Check if the system is running.' },
+            { 'Flag': '<code>-Te &lt;unit&gt;</code>', '<code>systemctl</code> command': '<code>is-failed &lt;unit&gt;</code>', 'Description': 'Check if a unit has failed.' },
+            { 'Flag': '<code>-Jl</code>', '<code>systemctl</code> command': '<code>list-jobs</code>', 'Description': 'List active jobs.' },
+            { 'Flag': '<code>-Jc [job..]</code>', '<code>systemctl</code> command': '<code>cancel [job..]</code>', 'Description': 'Cancel one or more jobs.' },
+            { 'Flag': '<code>-N</code>', '<code>systemctl</code> command': '<code>show-environment</code>', 'Description': 'Show the environment block.' },
+            { 'Flag': '<code>-Ns &lt;VARS&gt;</code>', '<code>systemctl</code> command': '<code>set-environment &lt;VARS&gt;</code>', 'Description': 'Set environment variables.' },
+            { 'Flag': '<code>-Nn &lt;VARS&gt;</code>', '<code>systemctl</code> command': '<code>unset-environment &lt;VARS&gt;</code>', 'Description': 'Unset environment variables.' },
+            { 'Flag': '<code>-Ni</code>', '<code>systemctl</code> command': '<code>import-environment</code>', 'Description': 'Import environment variables.' },
+        ],
+    },
+    {
+        title: 'Global Modifiers (combine with operations)',
+        headers: ['Flag', '<code>systemctl</code> option', 'Description'],
+        rows: [
+            { 'Flag': '<code>u</code>', '<code>systemctl</code> option': '<code>--user</code>', 'Description': 'Operate on the user\'s services.' },
+            { 'Flag': '<code>n</code>', '<code>systemctl</code> option': '<code>--now</code>', 'Description': 'With <code>enable</code>/<code>disable</code>, also starts/stops the unit.' },
+            { 'Flag': '<code>a</code>', '<code>systemctl</code> option': '<code>--all</code>', 'Description': 'Show all units/properties, including inactive/empty ones.' },
+            { 'Flag': '<code>r</code>', '<code>systemctl</code> option': '<code>--recursive</code>', 'Description': 'Show dependencies recursively.' },
+            { 'Flag': '<code>f</code>', '<code>systemctl</code> option': '<code>--force</code>', 'Description': 'Force the operation.' },
+            { 'Flag': '<code>D</code>', '<code>systemctl</code> option': '<code>--dry-run</code>', 'Description': 'Enable systemctl\'s dry-run mode.' },
+            { 'Flag': '<code>z</code>', '<code>systemctl</code> option': 'N/A', 'Description': 'sacman dry-run. The command is printed but not executed.' },
+        ],
+    },
+];
